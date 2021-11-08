@@ -28,8 +28,6 @@ describe("AuthenticateUserUseCase", () => {
       password: "1234",
     });
 
-    console.log(process.env.JWT_SECRET);
-
     expect(response).toHaveProperty("token");
     expect(response).toHaveProperty("user");
   });

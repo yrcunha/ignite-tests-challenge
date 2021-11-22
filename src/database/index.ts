@@ -2,6 +2,7 @@ import { Connection, createConnection, getConnectionOptions } from "typeorm";
 
 export default async (host = "database"): Promise<Connection> => {
   const defaultOptions = await getConnectionOptions();
+
   return createConnection(
     Object.assign(defaultOptions, {
       host: process.env.NODE_ENV === "test" ? "172.17.0.2" : host,
